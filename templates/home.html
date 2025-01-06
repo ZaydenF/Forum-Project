@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>Home</h1>
+  
+{%if logged_in%}
+<div>
+	<form action="/ForumOne" method="POST">
+  <input type="text" name="ques1"><br>
+  <button type="submit">POST</button>
+	</form>
+</div>
+{%else%}
+<p>login to post on the forum</p>
+{%endif%}
+
+<pre>{{firstPost}}</pre>
+	
+
+  
+{% endblock %}
